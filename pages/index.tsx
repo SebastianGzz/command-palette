@@ -1,16 +1,11 @@
-import { useEffect } from "react";
 import { useCommandPalette } from "@/hooks/useCommandPalette";
 
 export default function Home() {
   const commandPalette = useCommandPalette();
 
-  useEffect(() => {
-    console.log(commandPalette);
-  });
-
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Ctrl + K</h1>
 
       {commandPalette.commandPaletteOpen && (
         <div className="max-w-[640px] m-auto p-2 bg-neutral-900 border border-neutral-700 rounded-lg">
@@ -24,7 +19,7 @@ export default function Home() {
 
           <ul className="mt-2 overflow-y-auto max-h-80">
             {commandPalette.commandPaletteResults.map((option, index) => (
-              <li key={option.id} className="bg-neutral-900">
+              <li key={option.id} className="bg-transparent">
                 <button
                   onMouseEnter={() =>
                     commandPalette.handleChooseOption(option.id)
@@ -41,6 +36,13 @@ export default function Home() {
                 </button>
               </li>
             ))}
+
+            {/* No results */}
+            {commandPalette.commandPaletteResults.length === 0 && (
+              <li className="flex items-center w-full h-12 gap-3 px-4 bg-transparent">
+                <p>No results. Try another option.</p>
+              </li>
+            )}
           </ul>
         </div>
       )}

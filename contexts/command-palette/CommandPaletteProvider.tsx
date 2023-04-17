@@ -118,8 +118,6 @@ export default function CommandPaletteProvider({ children }: Props) {
       if (e.key === "Enter") handleExecuteAction();
     }
 
-    console.log("Command Palette Provider");
-
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
