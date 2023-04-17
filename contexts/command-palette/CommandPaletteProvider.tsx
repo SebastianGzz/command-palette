@@ -87,7 +87,10 @@ export default function CommandPaletteProvider({ children }: Props) {
   // filter command palette options
   useEffect(() => {
     const results = commandPalette.filter((option) => {
-      return option.name.toLowerCase().includes(commandPaletteSearch);
+      const name = option.name.toLowerCase();
+      const search = commandPaletteSearch.toLocaleLowerCase();
+
+      return name.includes(search);
     });
 
     setCommandPaletteResults(results);
