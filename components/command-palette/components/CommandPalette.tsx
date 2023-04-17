@@ -6,7 +6,8 @@ import { createPortal } from "react-dom";
 // RenderPortal is a component that renders the command palette in a portal
 export const RenderPortal = (component: React.ReactNode) => {
   const commandPalette = useCommandPalette();
-  const domElement = document.getElementById("modal");
+  const domElement =
+    typeof document !== "undefined" && document.getElementById("modal");
 
   if (commandPalette.commandPaletteOpen && domElement) {
     return createPortal(component, domElement);
