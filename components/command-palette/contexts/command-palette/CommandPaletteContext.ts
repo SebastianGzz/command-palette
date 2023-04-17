@@ -1,14 +1,14 @@
 import { createContext } from "react";
-import { ICommandPaletteOption, TInputEvent } from "./types";
+import { ICommandPaletteData, TInputEvent } from "./types";
 
 interface Props {
-  commandPalette: ICommandPaletteOption[];
+  commandPalette: ICommandPaletteData[];
   commandPaletteOpen: boolean;
   commandPaletteSearch: string;
-  commandPaletteResults: ICommandPaletteOption[];
-  commandPaletteIndex: number;
+  commandPaletteResults: ICommandPaletteData[];
+  commandPaletteIndex: number[];
   handleCommandPaletteSearch: (e: TInputEvent) => void;
-  handleChooseOption: (option: number) => void;
+  handleChooseOption: (categoryIndex: number, option: number) => void;
   handleExecuteAction: () => void;
 }
 

@@ -5,5 +5,10 @@ export interface ICommandPaletteOption {
   action: () => void;
 }
 
+export interface ICommandPaletteData {
+  title: string;
+  options: ICommandPaletteOption[];
+}
+
 // React.ChangeEvent<HTMLInputElement>
 export type TInputEvent = React.ChangeEvent<HTMLInputElement>;

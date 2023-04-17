@@ -9,6 +9,10 @@ export default function CommandPaletteFinder() {
       <input
         autoFocus
         type="text"
+        autoCapitalize="off"
+        autoComplete="off"
+        autoCorrect="off"
+        spellCheck="false"
         placeholder="What do you need?"
         onChange={commandPalette.handleCommandPaletteSearch}
         className="w-full px-2 py-4 text-lg font-medium text-white bg-transparent border-b outline-none border-neutral-700 placeholder-neutral-500"
