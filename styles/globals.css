@@ -16,6 +16,12 @@
   }
 }
 
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   color-scheme: light dark;
