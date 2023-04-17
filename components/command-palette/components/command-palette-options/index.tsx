@@ -1,4 +1,4 @@
-import { useCommandPalette } from "@/hooks/useCommandPalette";
+import { useCommandPalette } from "@/components/command-palette/hooks/useCommandPalette";
 
 export default function CommandPaletteOptions() {
   const commandPalette = useCommandPalette();
@@ -6,14 +6,10 @@ export default function CommandPaletteOptions() {
   return (
     <ul className="mt-2 overflow-y-auto max-h-80 scroll-smooth">
       {commandPalette.commandPaletteResults.map((option, index) => (
-        <li
-          key={option.id}
-          id={option.id.toString()}
-          className="bg-transparent"
-        >
+        <li key={option.id} id={option.id.toString()}>
           <button
             onClick={commandPalette.handleExecuteAction}
-            onMouseEnter={() => commandPalette.handleChooseOption(option.id)}
+            onMouseMove={() => commandPalette.handleChooseOption(option.id)}
             className={`${
               commandPalette.commandPaletteIndex === index
                 ? "bg-neutral-800 text-white"
@@ -26,7 +22,7 @@ export default function CommandPaletteOptions() {
         </li>
       ))}
 
-      {/* No results */}
+      {/* shown when there are no results */}
       {commandPalette.commandPaletteResults.length === 0 && (
         <li className="flex items-center w-full h-12 gap-3 px-4 bg-transparent">
           <p>No results. Try another option.</p>

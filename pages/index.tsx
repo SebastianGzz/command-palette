@@ -1,7 +1,9 @@
+import ShortcutKeys from "@/components/command-palette/components/ShortcutKeys";
+
 export default function Home() {
   return (
     <div>
-      <h1>Ctrl + K</h1>
+      <ShortcutKeys keys={["ctrl", "k"]} />
     </div>
   );
 }

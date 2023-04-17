@@ -1,5 +1,5 @@
-import CommandPalette from "@/components/command-palette";
-import CommandPaletteProvider from "@/contexts/command-palette/CommandPaletteProvider";
+import CommandPalette from "@/components/command-palette/components/CommandPalette";
+import CommandPaletteProvider from "@/components/command-palette/contexts/command-palette/CommandPaletteProvider";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Inter } from "next/font/google";

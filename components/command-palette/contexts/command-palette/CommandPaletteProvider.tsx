@@ -80,8 +80,10 @@ export default function CommandPaletteProvider({ children }: Props) {
   };
 
   const handleExecuteAction = useCallback(() => {
-    commandPaletteResults[commandPaletteIndex].action();
-    setCommandPaletteOpen(false);
+    if (commandPaletteResults[commandPaletteIndex]) {
+      commandPaletteResults[commandPaletteIndex].action();
+      setCommandPaletteOpen(false);
+    }
   }, [commandPaletteResults, commandPaletteIndex]);
 
   // filter command palette options
